@@ -7,68 +7,103 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <link rel="stylesheet" href="./reset.css">
   <link rel="stylesheet" href="./style.css">
   <title>Document</title>
 </head>
 
 <body>
-  <div class="container">
+<div id="app"></div>
 
-    <header class="header">
-      <a href="#" class="logo">NeStudio</a>
-      <div class="header-btns">
-        <button class="btn">Login</button>
-        <button class="btn">Sign up</button>
-      </div>
 
-    </header>
+<script type="text/babel">
+  const Header = () => {
+    return (
+      <>
+        <header className="header">
+          <a href="#" className="logo">NeStudio</a>
+          <div className="header-btns">
+            <button className="btn">Login</button>
+            <button className="btn">Sign up</button>
+          </div>
+        </header>
+      </>
+    );
+  };
 
-    <main class="main">
+  const Main = () => {
+    return (
+      <>
+        <main className="main">
+          <div className="main-info">
+            <div className="box">
+              <h4>All in one place</h4>
+              <p>The right place to keep your credit and debit cards, boarding passes & more.</p>
+            </div>
+            <div className="box">
+              <h4>No payment fee</h4>
+              <p>Transfer your payment all over the world with no payment fee.</p>
+            </div>
+            <div className="box">
+              <h4>Customizable card</h4>
+              <p>Custom your own card for your exact incomes and expenses needs.</p>
+            </div>
+          </div>
+          <div className="main-img">
+            <img src="./images/Image.png" alt="Main image"/>
+          </div>
+        </main>
+      </>
+    );
+  };
 
-      <div class="main-info">
-        <div class="box">
-          <h4>All in one place</h4>
-          <p>The right place to keep your credit and debit cards, boarding passes & more.</p>
-        </div>
-        <div class="box">
-          <h4>No payment fee</h4>
-          <p>Transfer your payment all over the world with no payment fee.</p>
-        </div>
-        <div class="box">
-          <h4>Customizable card</h4>
-          <p>Custom your own card for your exact incomes and expenses needs.</p>
-        </div>
-      </div>
+  const Sidebar = () => {
+    return (
+      <>
+        <aside className="sidebar">
+          <ul className="side-list">
+            <li className="side-item"><a href="#" className="side-link">Search</a></li>
+            <li className="side-item"><a href="#" className="side-link">Home</a></li>
+            <li className="side-item"><a href="#" className="side-link">Profile</a></li>
+            <li className="side-item"><a href="#" className="side-link">Setting</a></li>
+            <li className="side-item"><a href="#" className="side-link">Notifications</a></li>
+            <li className="side-item"><a href="#" className="side-link">Products</a></li>
+          </ul>
+        </aside>
+      </>
+    );
+  };
 
-      <div class="main-img">
-        <img src="./images/Image.png" alt="Main image">
-      </div>
+  const Footer = () => {
+    return (
+      <>
+        <footer className="footer">
+          <a href="#" className="logo">NeStudio</a>
+          <div className="footer-links">
+            <a href="#">© nestudio 2024</a>
+            <a href="#">Privacy policy</a>
+            <a href="#">Cookies policy</a>
+            <a href="#">Terms of use</a>
+          </div>
+        </footer>
+      </>
+    );
+  };
 
-    </main>
+  const page = (
+    <>
+      <Header/>
+      <Main/>
+      <Sidebar/>
+      <Footer/>
+    </>
+  );
 
-    <aside class="sidebar">
-      <ul class="side-list">
-        <li class="side-item"><a href="#" class="side-link">Search</a></li>
-        <li class="side-item"><a href="#" class="side-link">Home</a></li>
-        <li class="side-item"><a href="#" class="side-link">Profile</a></li>
-        <li class="side-item"><a href="#" class="side-link">Setting</a></li>
-        <li class="side-item"><a href="#" class="side-link">Notifications</a></li>
-        <li class="side-item"><a href="#" class="side-link">Products</a></li>
-      </ul>
-    </aside>
-
-    <footer class="footer">
-      <a href="#" class="logo">NeStudio</a>
-      <div class="footer-links">
-        <a href="#">© nestudio 2024</a>
-        <a href="#">Privacy policy</a>
-        <a href="#">Cookies policy</a>
-        <a href="#">Terms of use</a>
-      </div>
-    </footer>
-
-  </div>
+  ReactDOM.render(page, document.getElementById('app'));
+</script>
 </body>
 
 </html>
