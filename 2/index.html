@@ -20,11 +20,11 @@
 
 
 <script type="text/babel">
-  const Header = () => {
+  const Header = ({logoName}) => {
     return (
       <>
         <header className="header">
-          <a href="#" className="logo">NeStudio</a>
+          <a href="#" className="logo">{logoName}</a>
           <div className="header-btns">
             <button className="btn">Login</button>
             <button className="btn">Sign up</button>
@@ -34,26 +34,34 @@
     );
   };
 
-  const Main = () => {
+  const Main = ({
+                  firstBoxTitle,
+                  firstBoxSubtitle,
+                  secondBoxTitle,
+                  secondBoxSubtitle,
+                  thirdBoxTitle,
+                  thirdBoxSubtitle,
+                  mainImg
+                }) => {
     return (
       <>
         <main className="main">
           <div className="main-info">
             <div className="box">
-              <h4>All in one place</h4>
-              <p>The right place to keep your credit and debit cards, boarding passes & more.</p>
+              <h4>{firstBoxTitle}</h4>
+              <p>{firstBoxSubtitle}</p>
             </div>
             <div className="box">
-              <h4>No payment fee</h4>
-              <p>Transfer your payment all over the world with no payment fee.</p>
+              <h4>{secondBoxTitle}</h4>
+              <p>{secondBoxSubtitle}</p>
             </div>
             <div className="box">
-              <h4>Customizable card</h4>
-              <p>Custom your own card for your exact incomes and expenses needs.</p>
+              <h4>{thirdBoxTitle}</h4>
+              <p>{thirdBoxSubtitle}</p>
             </div>
           </div>
           <div className="main-img">
-            <img src="./images/Image.png" alt="Main image"/>
+            <img src={mainImg} alt="Main image"/>
           </div>
         </main>
       </>
@@ -77,13 +85,13 @@
     );
   };
 
-  const Footer = () => {
+  const Footer = ({logoName, year}) => {
     return (
       <>
         <footer className="footer">
-          <a href="#" className="logo">NeStudio</a>
+          <a href="#" className="logo">{logoName}</a>
           <div className="footer-links">
-            <a href="#">© nestudio 2024</a>
+            <a href="#">© {logoName} {year}</a>
             <a href="#">Privacy policy</a>
             <a href="#">Cookies policy</a>
             <a href="#">Terms of use</a>
@@ -95,10 +103,16 @@
 
   const page = (
     <>
-      <Header/>
-      <Main/>
+      <Header logoName={"NeStudio"}/>
+      <Main firstBoxTitle={"All in one place"}
+            firstBoxSubtitle={"The right place to keep your credit and debit cards, boarding passes & more."}
+            secondBoxTitle={"No payment fee"}
+            secondBoxSubtitle={"Transfer your payment all over the world with no payment fee."}
+            thirdBoxTitle={"Customizable card"}
+            thirdBoxSubtitle={"Custom your own card for your exact incomes and expenses needs."}
+            mainImg={"./images/Image.png"}/>
       <Sidebar/>
-      <Footer/>
+      <Footer logoName="NeStudio" year="2024"/>
     </>
   );
 
